@@ -1,0 +1,139 @@
+Last login: Tue May 24 17:26:49 on ttys000
+yuanwang@Yuans-MacBook-Pro ~ % cd /Users/yuanwang/Desktop/lab03_demo 
+yuanwang@Yuans-MacBook-Pro lab03_demo % git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /Users/yuanwang/Desktop/lab03_demo/.git/
+yuanwang@Yuans-MacBook-Pro lab03_demo % git remote add origin https://github.com/kuiyuanyuedui/cs_lab.git
+yuanwang@Yuans-MacBook-Pro lab03_demo % touch .gitignore
+yuanwang@Yuans-MacBook-Pro lab03_demo % open.
+zsh: command not found: open.
+yuanwang@Yuans-MacBook-Pro lab03_demo % open .
+yuanwang@Yuans-MacBook-Pro lab03_demo % mkdir lab03_demo_1
+yuanwang@Yuans-MacBook-Pro lab03_demo % open .
+yuanwang@Yuans-MacBook-Pro lab03_demo % git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+	lab03_demo_1/
+
+nothing added to commit but untracked files present (use "git add" to track)
+yuanwang@Yuans-MacBook-Pro lab03_demo % git add .
+yuanwang@Yuans-MacBook-Pro lab03_demo % git commit -m "Project initialized"
+[master (root-commit) e05bdeb] Project initialized
+ 6 files changed, 65 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 lab03_demo_1/lab03/.idea/.gitignore
+ create mode 100644 lab03_demo_1/lab03/.idea/misc.xml
+ create mode 100644 lab03_demo_1/lab03/.idea/modules.xml
+ create mode 100644 lab03_demo_1/lab03/.idea/vcs.xml
+ create mode 100644 lab03_demo_1/lab03/lab03.iml
+yuanwang@Yuans-MacBook-Pro lab03_demo % git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+yuanwang@Yuans-MacBook-Pro lab03_demo % git push --set-upstream origin master
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (11/11), 1.47 KiB | 1.47 MiB/s, done.
+Total 11 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kuiyuanyuedui/cs_lab.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+yuanwang@Yuans-MacBook-Pro lab03_demo % git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   lab03_demo_1/lab03/src/lab03.java
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   lab03_demo_1/lab03/src/lab03.java
+
+yuanwang@Yuans-MacBook-Pro lab03_demo % git add .
+yuanwang@Yuans-MacBook-Pro lab03_demo % git commint -m "added hello world"
+git: 'commint' is not a git command. See 'git --help'.
+
+The most similar command is
+	commit
+yuanwang@Yuans-MacBook-Pro lab03_demo % git commit -m "added"
+[master 8c80a3a] added
+ 1 file changed, 3 insertions(+)
+ create mode 100644 lab03_demo_1/lab03/src/lab03.java
+yuanwang@Yuans-MacBook-Pro lab03_demo % git push
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 543 bytes | 543.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kuiyuanyuedui/cs_lab.git
+   e05bdeb..8c80a3a  master -> master
+yuanwang@Yuans-MacBook-Pro lab03_demo % git branch
+* master
+yuanwang@Yuans-MacBook-Pro lab03_demo % git log
+commit 8c80a3a826270240408e09c6d8f5d779cf6b1294 (HEAD -> master, origin/master)
+Author: kuiyuanyuedui <103470588+kuiyuanyuedui@users.noreply.github.com>
+Date:   Tue May 24 18:01:52 2022 -0700
+
+    added
+
+commit e05bdebf3b67286b34247dafa0838ccc0b1b61fd
+Author: kuiyuanyuedui <103470588+kuiyuanyuedui@users.noreply.github.com>
+Date:   Tue May 24 17:52:47 2022 -0700
+
+    Project initialized
+yuanwang@Yuans-MacBook-Pro lab03_demo % git log --oneline
+8c80a3a (HEAD -> master, origin/master) added
+e05bdeb Project initialized
+yuanwang@Yuans-MacBook-Pro lab03_demo % git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 762 bytes | 254.00 KiB/s, done.
+From https://github.com/kuiyuanyuedui/cs_lab
+   8c80a3a..4095e38  master     -> origin/master
+Updating 8c80a3a..4095e38
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+yuanwang@Yuans-MacBook-Pro lab03_demo % git log
+commit 4095e38e693b16c7aad9397839bacdfe989e01cc (HEAD -> master, origin/master)
+Author: YUAN WANG <103470588+kuiyuanyuedui@users.noreply.github.com>
+Date:   Tue May 24 18:07:55 2022 -0700
+
+    Create README.md
+
+commit 8c80a3a826270240408e09c6d8f5d779cf6b1294
+Author: kuiyuanyuedui <103470588+kuiyuanyuedui@users.noreply.github.com>
+Date:   Tue May 24 18:01:52 2022 -0700
+
+    added
+
+commit e05bdebf3b67286b34247dafa0838ccc0b1b61fd
+Author: kuiyuanyuedui <103470588+kuiyuanyuedui@users.noreply.github.com>
+Date:   Tue May 24 17:52:47 2022 -0700
+
+    Project initialized
+yuanwang@Yuans-MacBook-Pro lab03_demo % 
